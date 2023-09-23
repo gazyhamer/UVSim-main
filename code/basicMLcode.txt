@@ -1,0 +1,72 @@
+#op_codes
+#Read = 10 Write = 11 Load = 20 Store = 21
+#Add = 30 Subtract = 31 Divid = 32 Multiply = 33
+#Branch = 40 Branch_neg = 41 Branch_zero = 42
+#if you want to use numaricle op codes please use a space after the number
+#ex 10_0 
+#This file will get read into memory in order
+#comments can be made with #
+#Next lines starts at memory location 0
+
+# Line 0:reads input into location 0
+25
+# Line 1: number 1 goes into location 1
+1
+# Line 2: number -1 goes in location 2
+-1
+# Line 3: number 5 goes in location 3
+5
+# Line 4: jumps to memory location 6
+branch 6
+# Line 5: this should not have anything in it becuase of the branch in 4
+write 3
+# Line 6: store word from location zero into accumulator
+Load 0
+# Line 7: subtract number from location 1 from accumulator
+subtract 1
+# Line 8: stores 0 in memory location 8
+0
+#Line 9: Store number from accumulator into line 8
+store 8
+# Line 10: write number from memory location 8 to console
+write 8
+# Line 11: Jump to memory location 15 if accumulator is zero
+branch_zero 15
+# Line 12: Jumps back to location 7 
+branch 7
+# Line 13/14 will fail to print to screen becuase it was jumped over in the branch
+write 8
+write 8
+# line 15: loads contents of memory location 0 into accumulator
+load 0
+# Line 16: divides what is in accumulator with memory location 3
+divide 3
+# Line 17: stores in memory location 17
+0
+# Line 18: stores the value in accumulator to location 17
+store 17
+# Line 19: writes value from memory location 17 into console
+write 17
+# Line 20: multiplys the value in accumulator and memory location 17
+multiply 17
+# Line 21: stores value from accumulator to location 17
+store 17
+# Line 22: writes value from memory location 17 to console
+write 17
+# Line 23: loads value from accumulator in memory location 2
+load 2
+#Line 24: jumps to location 27 becuase accumulator is negative
+Branch_neg 27
+#Line 25/26 will get ingnored becuase the negative branch on 24
+write 2
+write 2
+#line 27: adds value in accumulator from location 3
+add 3
+#line 28: Stores value in memory location 27
+store 27
+#line 28: writes value to screen from memory location 27
+write 27
+#Line 29: reads value from keyboard and stores it to 27
+read 27
+#Line 30: writes value to screen from memory location 27
+write 27
